@@ -1,12 +1,22 @@
 // Скролл от якорных ссылок в навигации до целевых элементов
 const scroll = () => {
   const anchorLinks = document.querySelectorAll('.top-menu>ul>li>a');
+  const upButton = document.querySelector('.up');
+  console.log(upButton);
 
-  // функция плавного скролла
-  const scrollDown = offsetPosition => {
+  // функция плавного скролла для header
+  const toggleHeaderScroll = offsetPosition => {
     window.scrollBy({
       top: offsetPosition,
       behavior: 'smooth'
+    });
+  };
+
+  // функция плавного скролла вверх от элемента .up
+  const toggleShevronScroll = target => {
+    target.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
     });
   };
 
@@ -30,9 +40,24 @@ const scroll = () => {
       // это количество пикселей для прокрутки по оси Y
       const offsetPosition = elementPosition - topOffset;
 
-      scrollDown(offsetPosition);
+      toggleHeaderScroll(offsetPosition);
     });
   });
+
+  upButton.addEventListener('click', e => {
+    e.preventDefault();
+    const scrollTarget = document.querySelector('.main-wrapper');
+    toggleShevronScroll(scrollTarget);
+  });
+
+  window.addEventListener('scroll', e => {
+    if (e.target.matches('.services-section')) {
+      upButton.style.display = 'none';
+    } else {
+      upButton.style.display = 'fixed';
+    }
+  });
+
 };
 
 export default scroll;
