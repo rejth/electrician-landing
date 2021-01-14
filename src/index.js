@@ -1,5 +1,5 @@
 import modalWindow from './components/modalWindow';
-import scroll from './components/scroll.js';
+import scroll from './components/scroll';
 
 // Модальное окно
 modalWindow();

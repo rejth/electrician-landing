@@ -49,7 +49,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n// Скролл от якорных ссылок в навигации до целевых элементов\nvar scroll = function scroll() {\n  var anchorLinks = document.querySelectorAll('.top-menu>ul>li>a'); // функция плавного скролла\n\n  var scrollDown = function scrollDown(target) {\n    target.scrollIntoView({\n      behavior: 'smooth',\n      block: 'start'\n    });\n  };\n\n  anchorLinks.forEach(function (item) {\n    item.addEventListener('click', function (e) {\n      e.preventDefault();\n      var targetLink = e.target.getAttribute('href');\n      var scrollTarget = document.querySelector(targetLink);\n      scrollDown(scrollTarget);\n    });\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (scroll);\n\n//# sourceURL=webpack://electrician-landing-project/./src/components/scroll.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n// Скролл от якорных ссылок в навигации до целевых элементов\nvar scroll = function scroll() {\n  var anchorLinks = document.querySelectorAll('.top-menu>ul>li>a'); // функция плавного скролла\n\n  var scrollDown = function scrollDown(offsetPosition) {\n    window.scrollBy({\n      top: offsetPosition,\n      behavior: 'smooth'\n    });\n  };\n\n  anchorLinks.forEach(function (item) {\n    item.addEventListener('click', function (e) {\n      e.preventDefault();\n      var targetLink = e.target.getAttribute('href'); // ссылка на элемент\n\n      var scrollTarget = document.querySelector(targetLink); // целевой элемент\n      // высота header для отступа сверху\n\n      var topOffset = document.querySelector('.header').offsetHeight; // позиция целевого элемента относительно видимой части страницы\n      // scrollTarget.getBoundingClientRect() - возвращает объект со свойствами\n      // визуально это прямоугольник, в котором содержится целевой элемент\n      // свойство top - считает расстояние от верхнего левого угла window до целевого элемента\n\n      var elementPosition = scrollTarget.getBoundingClientRect().top; // от общей высоты документа отнимем высоту header и получим необходимое смещение в пикселях по оси Y.\n      // это количество пикселей для прокрутки по оси Y\n\n      var offsetPosition = elementPosition - topOffset;\n      scrollDown(offsetPosition);\n    });\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (scroll);\n\n//# sourceURL=webpack://electrician-landing-project/./src/components/scroll.js?");
 
 /***/ }),
 
@@ -60,7 +60,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_modalWindow__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/modalWindow */ \"./src/components/modalWindow.js\");\n/* harmony import */ var _components_scroll_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/scroll.js */ \"./src/components/scroll.js\");\n\n // Модальное окно\n\n(0,_components_modalWindow__WEBPACK_IMPORTED_MODULE_0__.default)(); // Скролл от якорных ссылок до соответстбущих блоков\n\n(0,_components_scroll_js__WEBPACK_IMPORTED_MODULE_1__.default)();\n\n//# sourceURL=webpack://electrician-landing-project/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_modalWindow__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/modalWindow */ \"./src/components/modalWindow.js\");\n/* harmony import */ var _components_scroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/scroll */ \"./src/components/scroll.js\");\n\n // Модальное окно\n\n(0,_components_modalWindow__WEBPACK_IMPORTED_MODULE_0__.default)(); // Скролл от якорных ссылок до соответстбущих блоков\n\n(0,_components_scroll__WEBPACK_IMPORTED_MODULE_1__.default)();\n\n//# sourceURL=webpack://electrician-landing-project/./src/index.js?");
 
 /***/ }),
 
@@ -455,7 +455,7 @@ eval("var map = {\n\t\"./log\": \"./node_modules/webpack/hot/log.js\"\n};\n\n\nf
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => "9cfdc0c4d3957fa060b6"
+/******/ 		__webpack_require__.h = () => "5a2aae8243e0bb17871f"
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
