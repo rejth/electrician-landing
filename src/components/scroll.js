@@ -1,8 +1,9 @@
 // Скролл от якорных ссылок в навигации до целевых элементов
+// TODO делегировать слушатель на document, сделать проверку по matches и запускать соответсвующие функции
 const scroll = () => {
   const anchorLinks = document.querySelectorAll('.top-menu>ul>li>a');
   const upButton = document.querySelector('.up');
-  console.log(upButton);
+  const serviceSectionBlock = document.querySelector('.services-section');
 
   // функция плавного скролла для header
   const toggleHeaderScroll = offsetPosition => {
@@ -50,14 +51,14 @@ const scroll = () => {
     toggleShevronScroll(scrollTarget);
   });
 
-  window.addEventListener('scroll', e => {
-    if (e.target.matches('.services-section')) {
-      upButton.style.display = 'none';
-    } else {
-      upButton.style.display = 'fixed';
+  window.addEventListener('scroll', () => {
+    if (document.documentElement.scrollTop === 0) {
+      upButton.style.visibility = 'hidden';
+    }
+    if (document.documentElement.scrollTop + 300 > serviceSectionBlock.getBoundingClientRect().top) {
+      upButton.style.visibility = 'visible';
     }
   });
-
 };
 
 export default scroll;
