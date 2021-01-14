@@ -11,7 +11,7 @@ const modalWindow = () => {
       modalOverlay.style.display = 'block';
     }
     // закрытие окна
-    if (e.target.closest('.modal-close') || e.target.closest('.modal-overlay')) {
+    if (e.target.closest('.modal-close') || e.target.matches('.modal-overlay')) {
       modalWindow.style.display = 'none';
       modalOverlay.style.display = 'none';
     }
