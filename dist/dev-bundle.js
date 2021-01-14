@@ -38,7 +38,7 @@ eval("\nmodule.exports = function () {\n\treturn /[\\u001b\\u009b][[()#;?]*(?:[0
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\nvar modalWindow = function modalWindow() {\n  var modalWindow = document.querySelector('.modal-callback');\n  var modalOverlay = document.querySelector('.modal-overlay');\n  document.addEventListener('click', function (e) {\n    e.preventDefault(); // открытие окна\n\n    if (e.target.matches('.callback-btn')) {\n      modalWindow.style.display = 'block';\n      modalOverlay.style.display = 'block';\n    } // закрытие окна\n\n\n    if (e.target.closest('.modal-close') || e.target.matches('.modal-overlay')) {\n      modalWindow.style.display = 'none';\n      modalOverlay.style.display = 'none';\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (modalWindow);\n\n//# sourceURL=webpack://electrician-landing-project/./src/components/modalWindow.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\nvar modalWindow = function modalWindow() {\n  var modalWindow = document.querySelector('.modal-callback');\n  var modalOverlay = document.querySelector('.modal-overlay');\n  document.addEventListener('click', function (e) {\n    e.preventDefault(); // открытие окна\n\n    if (e.target.matches('.callback-btn') || e.target.closest('.mob-menu-btn')) {\n      modalWindow.style.display = 'block';\n      modalOverlay.style.display = 'block';\n    } // закрытие окна\n\n\n    if (e.target.closest('.modal-close') || e.target.matches('.modal-overlay')) {\n      modalWindow.style.display = 'none';\n      modalOverlay.style.display = 'none';\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (modalWindow);\n\n//# sourceURL=webpack://electrician-landing-project/./src/components/modalWindow.js?");
 
 /***/ }),
 
@@ -60,7 +60,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_modalWindow__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/modalWindow */ \"./src/components/modalWindow.js\");\n/* harmony import */ var _components_scroll_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/scroll.js */ \"./src/components/scroll.js\");\n // import mobileModalWindow from './components/mobileModalWindow';\n\n // Модальное окно\n\n(0,_components_modalWindow__WEBPACK_IMPORTED_MODULE_0__.default)(); // Мобильное модальное окно\n// mobileModalWindow();\n// Скролл от якорных ссылок до соответстбущих блоков\n\n(0,_components_scroll_js__WEBPACK_IMPORTED_MODULE_1__.default)();\n\n//# sourceURL=webpack://electrician-landing-project/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_modalWindow__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/modalWindow */ \"./src/components/modalWindow.js\");\n/* harmony import */ var _components_scroll_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/scroll.js */ \"./src/components/scroll.js\");\n\n // Модальное окно\n\n(0,_components_modalWindow__WEBPACK_IMPORTED_MODULE_0__.default)(); // Скролл от якорных ссылок до соответстбущих блоков\n\n(0,_components_scroll_js__WEBPACK_IMPORTED_MODULE_1__.default)();\n\n//# sourceURL=webpack://electrician-landing-project/./src/index.js?");
 
 /***/ }),
 
@@ -455,7 +455,7 @@ eval("var map = {\n\t\"./log\": \"./node_modules/webpack/hot/log.js\"\n};\n\n\nf
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => "9168237ffaf837aaf3a4"
+/******/ 		__webpack_require__.h = () => "f2e8c7b8589d51d39bac"
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

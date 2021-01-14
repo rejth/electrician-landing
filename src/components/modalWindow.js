@@ -6,7 +6,7 @@ const modalWindow = () => {
     e.preventDefault();
 
     // открытие окна
-    if (e.target.matches('.callback-btn')) {
+    if (e.target.matches('.callback-btn') || e.target.closest('.mob-menu-btn')) {
       modalWindow.style.display = 'block';
       modalOverlay.style.display = 'block';
     }
