@@ -38,7 +38,7 @@ eval("\nmodule.exports = function () {\n\treturn /[\\u001b\\u009b][[()#;?]*(?:[0
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\nvar modalWindow = function modalWindow() {\n  var modalWindow = document.querySelector('.modal-callback');\n  var modalOverlay = document.querySelector('.modal-overlay');\n  document.addEventListener('click', function (e) {\n    e.preventDefault(); // открытие окна\n\n    if (e.target.matches('.callback-btn') || e.target.closest('.mob-menu-btn')) {\n      modalWindow.style.display = 'block';\n      modalOverlay.style.display = 'block';\n    } // закрытие окна\n\n\n    if (e.target.closest('.modal-close') || e.target.matches('.modal-overlay')) {\n      modalWindow.style.display = 'none';\n      modalOverlay.style.display = 'none';\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (modalWindow);\n\n//# sourceURL=webpack://electrician-landing-project/./src/components/modalWindow.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\nvar modalWindow = function modalWindow() {\n  var modalWindow = document.querySelector('.modal-callback');\n  var modalOverlay = document.querySelector('.modal-overlay');\n  document.addEventListener('click', function (e) {\n    e.preventDefault(); // открытие окна\n\n    if (e.target.matches('.callback-btn') || e.target.closest('.mob-menu-btn') || e.target.matches('.button-services')) {\n      modalWindow.style.display = 'block';\n      modalOverlay.style.display = 'block';\n    } // закрытие окна\n\n\n    if (e.target.closest('.modal-close') || e.target.matches('.modal-overlay')) {\n      modalWindow.style.display = 'none';\n      modalOverlay.style.display = 'none';\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (modalWindow);\n\n//# sourceURL=webpack://electrician-landing-project/./src/components/modalWindow.js?");
 
 /***/ }),
 
@@ -455,7 +455,7 @@ eval("var map = {\n\t\"./log\": \"./node_modules/webpack/hot/log.js\"\n};\n\n\nf
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => "f2e8c7b8589d51d39bac"
+/******/ 		__webpack_require__.h = () => "9cfdc0c4d3957fa060b6"
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
