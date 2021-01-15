@@ -8,15 +8,8 @@ const sendForm = formName => {
   // сообщение о статусе отправки данных
   const message = document.createElement('div');
 
-  // модальное окно
-  const modalWindow = document.querySelector('.modal-callback');
-  const modalOverlay = document.querySelector('.modal-overlay');
-
   // форма
   const form = document.getElementById(formName);
-  console.log(form);
-
-  // const btn = document.querySelector(`#${formName} input[type="submit"]`);
 
   // все инпуты внутри формы
   const inputs = [
@@ -62,11 +55,6 @@ const sendForm = formName => {
         inputs.forEach(item => item.value = '');
         // удаление сообщения о статусе отправки
         setTimeout(() => message.remove(), 3000);
-        // закрытие модального окна
-        setTimeout(() => {
-          modalWindow.style.display = 'none';
-          modalOverlay.style.display = 'none';
-        }, 5000);
       });
   });
 

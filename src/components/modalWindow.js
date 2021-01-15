@@ -3,12 +3,11 @@ const modalWindow = () => {
   const modalOverlay = document.querySelector('.modal-overlay');
 
   document.addEventListener('click', e => {
-    e.preventDefault();
-
     // открытие окна
     if (e.target.matches('.callback-btn') ||
         e.target.closest('.mob-menu-btn') ||
-        e.target.matches('.button-services')) {
+        e.target.matches('.button-services') ||
+        e.target.matches('.services-elements a')) {
       modalWindow.style.display = 'block';
       modalOverlay.style.display = 'block';
     }

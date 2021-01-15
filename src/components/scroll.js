@@ -35,12 +35,10 @@ const scroll = () => {
   };
 
   document.addEventListener('click', e => {
-    e.preventDefault();
-
     if (e.target.matches('.top-menu>ul>li>a')) {
+      e.preventDefault();
       toggleHeaderScroll(e.target);
     }
-
     if (e.target.matches('.up')) {
       toggleShevronScroll();
     }
@@ -51,7 +49,6 @@ const scroll = () => {
     if (document.documentElement.scrollTop === 0) {
       upButton.style.visibility = 'hidden';
     }
-
     // делаем видимой кнопку .up, когда доходим до блока "Наши услуги"
     if (document.documentElement.scrollTop + 300 > serviceSectionBlock.getBoundingClientRect().top) {
       upButton.style.visibility = 'visible';
