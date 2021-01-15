@@ -10,9 +10,13 @@ const sendForm = formName => {
 
   // модальное окно
   const modalWindow = document.querySelector('.modal-callback');
+  const modalOverlay = document.querySelector('.modal-overlay');
 
   // форма
-  const form = document.querySelector(`#${formName}`);
+  const form = document.getElementById(formName);
+  console.log(form);
+
+  // const btn = document.querySelector(`#${formName} input[type="submit"]`);
 
   // все инпуты внутри формы
   const inputs = [
@@ -47,19 +51,23 @@ const sendForm = formName => {
     // отправляем данные на сервер
     postData(body)
       .then(response => {
-        if (response.statusCode !== 200) { throw new Error('Response status code is not 200'); }
+        if (response.status !== 200) { throw new Error('Response status code is not 200'); }
         message.textContent = successMessage;
       })
       .catch(error => {
         message.textContent = errorMessage;
         console.error(error);
       })
-      .finally(() => inputs.forEach(item => item.value = ''));
-
-    // удаление сообщения о статусе отправки
-    setTimeout(() => message.remove(), 5000);
-    // закрытие модального окна
-    setTimeout(() => modalWindow.style.display = 'none', 7000);
+      .finally(() => {
+        inputs.forEach(item => item.value = '');
+        // удаление сообщения о статусе отправки
+        setTimeout(() => message.remove(), 3000);
+        // закрытие модального окна
+        setTimeout(() => {
+          modalWindow.style.display = 'none';
+          modalOverlay.style.display = 'none';
+        }, 5000);
+      });
   });
 
   // Валидация данных
