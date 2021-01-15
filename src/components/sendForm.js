@@ -1,9 +1,12 @@
 // Отправка данных формы на сервер
 const sendForm = formName => {
   // сообщения о статусе отправки
-	const errorMessage = 'Что-то пошло не так...';
-	const loadMessage = 'Загрузка...';
+  const errorMessage = 'Что-то пошло не так...';
+  const loadMessage = 'Загрузка...';
   const successMessage = 'Спасибо! Мы скоро с вами свяжемся!';
+
+  // сообщение о статусе отправки данных
+  const message = document.createElement('div');
 
   // модальное окно
   const modalWindow = document.querySelector('.modal-callback');
@@ -14,11 +17,10 @@ const sendForm = formName => {
   // все инпуты внутри формы
   const inputs = [
     ...document.querySelectorAll(`#${formName}>.form-group input`),
-    ...document.querySelectorAll(`#${formName}>.form-group textarea`)];
+    ...document.querySelectorAll(`#${formName}>.form-group textarea`)
+  ];
 
-  // сообщение
-  const message = document.createElement('div');
-
+  // функция отправки данных на сервер
   const postData = body  => fetch('../server.php', {
     method: 'POST',
     headers: {
@@ -27,6 +29,7 @@ const sendForm = formName => {
     body: JSON.stringify(body)
   });
 
+  // Отправка данных
   form.addEventListener('submit', e => {
     e.preventDefault();
 
@@ -39,15 +42,19 @@ const sendForm = formName => {
 
     // готовим тело запроса для отправки
     const body = {};
-    for (const [key, value] of formData) {
-      body[key] = value;
-    }
+    for (const [key, value] of formData) { body[key] = value; }
 
     // отправляем данные на сервер
-    postData(body);
-
-    // очистка инпутов после отправки данных
-    inputs.forEach(item => item.value = '');
+    postData(body)
+      .then(response => {
+        if (response.statusCode !== 200) { throw new Error('Response status code is not 200'); }
+        message.textContent = successMessage;
+      })
+      .catch(error => {
+        message.textContent = errorMessage;
+        console.error(error);
+      })
+      .finally(() => inputs.forEach(item => item.value = ''));
 
     // удаление сообщения о статусе отправки
     setTimeout(() => message.remove(), 5000);
