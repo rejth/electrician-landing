@@ -18,7 +18,7 @@ const sendForm = formName => {
   ];
 
   // функция отправки данных на сервер
-  const postData = body  => fetch('./server.php', {
+  const postData = body  => fetch('server.php', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(body)
@@ -67,8 +67,8 @@ const sendForm = formName => {
     }
     // Валидация данных при вводе имени
     if (target.matches('input[name="fio"]')) {
-      target.setAttribute('pattern', '[А-Яа-яЁё-]{2,25}');
-      target.value = target.value.replace(/[^А-Яа-яЁё\s-]|/g, '');
+      target.setAttribute('pattern', '[А-Яа-яЁё\\s]{2,25}');
+      target.value = target.value.replace(/[^А-Яа-яЁё/\s-]|/g, '');
     }
     // Валидация данных при вводе сообщения
     if (target.matches('textarea[name="message"]')) {
