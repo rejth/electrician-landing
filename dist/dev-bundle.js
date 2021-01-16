@@ -71,7 +71,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_modalWindow__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/modalWindow */ \"./src/components/modalWindow.js\");\n/* harmony import */ var _components_scroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/scroll */ \"./src/components/scroll.js\");\n/* harmony import */ var _components_sendForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/sendForm */ \"./src/components/sendForm.js\");\n\n\n // Модальное окно\n\n(0,_components_modalWindow__WEBPACK_IMPORTED_MODULE_0__.default)(); // Скролл от якорных ссылок до соответстбущих блоков\n\n(0,_components_scroll__WEBPACK_IMPORTED_MODULE_1__.default)(); // Отправка данных на сервер\n\n(0,_components_sendForm__WEBPACK_IMPORTED_MODULE_2__.default)('form-callback');\n(0,_components_sendForm__WEBPACK_IMPORTED_MODULE_2__.default)('form-feedback');\n(0,_components_sendForm__WEBPACK_IMPORTED_MODULE_2__.default)('form-application');\n\n//# sourceURL=webpack://electrician-landing-project/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_modalWindow__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/modalWindow */ \"./src/components/modalWindow.js\");\n/* harmony import */ var _components_scroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/scroll */ \"./src/components/scroll.js\");\n/* harmony import */ var _components_sendForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/sendForm */ \"./src/components/sendForm.js\");\n\n\n // import slider from './components/slider';\n// Модальное окно\n\n(0,_components_modalWindow__WEBPACK_IMPORTED_MODULE_0__.default)(); // Скролл от якорных ссылок до соответстбущих блоков\n\n(0,_components_scroll__WEBPACK_IMPORTED_MODULE_1__.default)(); // Отправка данных на сервер\n\n(0,_components_sendForm__WEBPACK_IMPORTED_MODULE_2__.default)('form-callback');\n(0,_components_sendForm__WEBPACK_IMPORTED_MODULE_2__.default)('form-feedback');\n(0,_components_sendForm__WEBPACK_IMPORTED_MODULE_2__.default)('form-application'); // Слайдер\n// slider();\n\n//# sourceURL=webpack://electrician-landing-project/./src/index.js?");
 
 /***/ }),
 
@@ -466,7 +466,7 @@ eval("var map = {\n\t\"./log\": \"./node_modules/webpack/hot/log.js\"\n};\n\n\nf
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => "3ec428ee4b7308518e69"
+/******/ 		__webpack_require__.h = () => "9f51eacb66d3d5370fc7"
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
