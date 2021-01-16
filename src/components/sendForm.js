@@ -21,7 +21,8 @@ const sendForm = formName => {
   const postData = body  => fetch('./server.php', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(body)
+    body: JSON.stringify(body),
+    credentials: 'include'
   });
 
   // Отправка данных
