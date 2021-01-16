@@ -43,9 +43,9 @@ const sendForm = formName => {
     // отправляем данные на сервер
     postData(body)
       .then(response => {
+        console.log(response.status);
         if (response.status !== 200) { throw new Error('Response status code is not 200'); }
         message.textContent = successMessage;
-        console.log(response.status);
       })
       .catch(error => {
         message.textContent = errorMessage;
