@@ -53,8 +53,6 @@ const sendForm = formName => {
       })
       .finally(() => {
         inputs.forEach(item => item.value = '');
-        // удаление сообщения о статусе отправки
-        setTimeout(() => message.remove(), 3000);
       });
   });
 
