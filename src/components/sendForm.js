@@ -45,6 +45,7 @@ const sendForm = formName => {
       .then(response => {
         if (response.status !== 200) { throw new Error('Response status code is not 200'); }
         message.textContent = successMessage;
+        console.log(response.status);
       })
       .catch(error => {
         message.textContent = errorMessage;
