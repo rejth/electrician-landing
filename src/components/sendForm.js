@@ -18,11 +18,9 @@ const sendForm = formName => {
   ];
 
   // функция отправки данных на сервер
-  const postData = body  => fetch('../server.php', {
+  const postData = body  => fetch('./server.php', {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(body)
   });
 
@@ -52,7 +50,10 @@ const sendForm = formName => {
         console.error(error);
       })
       .finally(() => {
+        // очистка инптутов
         inputs.forEach(item => item.value = '');
+        // удаление сообщения о статусе отправки
+        setTimeout(() => message.remove(), 4000);
       });
   });
 
