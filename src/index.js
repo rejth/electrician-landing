@@ -1,7 +1,7 @@
 import modalWindow from './components/modalWindow';
 import scroll from './components/scroll';
 import sendForm from './components/sendForm';
-// import slider from './components/slider';
+import slider from './components/slider';
 
 // Модальное окно
 modalWindow();
@@ -15,4 +15,4 @@ sendForm('form-feedback');
 sendForm('form-application');
 
 // Слайдер
-// slider();
+slider();

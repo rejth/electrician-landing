@@ -64,6 +64,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/components/slider.js":
+/*!**********************************!*\
+  !*** ./src/components/slider.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\nvar slider = function slider() {\n  var sliderContainer = document.querySelector('.top-slider');\n  var slides = document.querySelectorAll('.item');\n  var currentSlide = 0;\n  var idInterval; // функция удаления активного класса у текущего элемента слайдера\n\n  var prevSlide = function prevSlide(element, index, strClass) {\n    element[index].classList.remove(strClass);\n  }; // функция добавления активного класса следующему элементу слайдера\n\n\n  var nextSlide = function nextSlide(element, index, strClass) {\n    element[index].classList.add(strClass);\n  }; // функция автоматического переключения слайдов\n\n\n  var autoPlaySlider = function autoPlaySlider() {\n    prevSlide(slides, currentSlide, 'item-active'); // скрываем текущий слайд\n\n    currentSlide++;\n\n    if (currentSlide === slides.length) {\n      currentSlide = 0;\n    }\n\n    nextSlide(slides, currentSlide, 'item-active'); // делаем видимым следующий слайд\n  }; // функция запуска слайдшоу\n\n\n  var startAutoPlay = function startAutoPlay() {\n    idInterval = setInterval(autoPlaySlider, 3000);\n  };\n\n  startAutoPlay(); // функция остановки слайдшоу\n\n  var stopAutoPlay = function stopAutoPlay() {\n    clearInterval(idInterval);\n  }; // останов слайдшоу при наведении мыши на слайдер\n\n\n  sliderContainer.addEventListener('mouseover', function (e) {\n    if (e.target.matches('.top-slider')) {\n      stopAutoPlay();\n    }\n  }); // запуск слайдшоу в иных случаях\n\n  sliderContainer.addEventListener('mouseout', function (e) {\n    if (e.target.matches('.top-slider')) {\n      startAutoPlay();\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (slider);\n\n//# sourceURL=webpack://electrician-landing-project/./src/components/slider.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -71,7 +82,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_modalWindow__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/modalWindow */ \"./src/components/modalWindow.js\");\n/* harmony import */ var _components_scroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/scroll */ \"./src/components/scroll.js\");\n/* harmony import */ var _components_sendForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/sendForm */ \"./src/components/sendForm.js\");\n\n\n // import slider from './components/slider';\n// Модальное окно\n\n(0,_components_modalWindow__WEBPACK_IMPORTED_MODULE_0__.default)(); // Скролл от якорных ссылок до соответстбущих блоков\n\n(0,_components_scroll__WEBPACK_IMPORTED_MODULE_1__.default)(); // Отправка данных на сервер\n\n(0,_components_sendForm__WEBPACK_IMPORTED_MODULE_2__.default)('form-callback');\n(0,_components_sendForm__WEBPACK_IMPORTED_MODULE_2__.default)('form-feedback');\n(0,_components_sendForm__WEBPACK_IMPORTED_MODULE_2__.default)('form-application'); // Слайдер\n// slider();\n\n//# sourceURL=webpack://electrician-landing-project/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_modalWindow__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/modalWindow */ \"./src/components/modalWindow.js\");\n/* harmony import */ var _components_scroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/scroll */ \"./src/components/scroll.js\");\n/* harmony import */ var _components_sendForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/sendForm */ \"./src/components/sendForm.js\");\n/* harmony import */ var _components_slider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/slider */ \"./src/components/slider.js\");\n\n\n\n // Модальное окно\n\n(0,_components_modalWindow__WEBPACK_IMPORTED_MODULE_0__.default)(); // Скролл от якорных ссылок до соответстбущих блоков\n\n(0,_components_scroll__WEBPACK_IMPORTED_MODULE_1__.default)(); // Отправка данных на сервер\n\n(0,_components_sendForm__WEBPACK_IMPORTED_MODULE_2__.default)('form-callback');\n(0,_components_sendForm__WEBPACK_IMPORTED_MODULE_2__.default)('form-feedback');\n(0,_components_sendForm__WEBPACK_IMPORTED_MODULE_2__.default)('form-application'); // Слайдер\n\n(0,_components_slider__WEBPACK_IMPORTED_MODULE_3__.default)();\n\n//# sourceURL=webpack://electrician-landing-project/./src/index.js?");
 
 /***/ }),
 
@@ -466,7 +477,7 @@ eval("var map = {\n\t\"./log\": \"./node_modules/webpack/hot/log.js\"\n};\n\n\nf
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => "9f51eacb66d3d5370fc7"
+/******/ 		__webpack_require__.h = () => "0787dd93311b3dd60cc8"
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
