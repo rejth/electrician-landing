@@ -1,39 +1,41 @@
 const accordeon = () => {
-  const accordeonContainer = document.querySelector('.accordeon');
-  console.log(accordeonContainer);
-
   const accordeonElements = document.querySelectorAll('.accordeon .element');
-  console.log(accordeonElements);
 
-  const elementTitles = document.querySelectorAll('.accordeon .title');
-  console.log(elementTitles);
-
-  const elementContents = document.querySelectorAll('.accordeon .element-content');
-  console.log(elementContents);
-
-  accordeonContainer.addEventListener('click', e => {
-    if (e.target.closest('.accordeon .element')) {
-      console.log('Clicked!');
-
-      e.target.parentNode.classList.toggle('active');
-      e.target.parentNode.childNodes[3].style.display = 'block';
-
-      if (e.target.parentNode.classList.contains('active')) {
-        console.log('Active!');
-
-        const otherAccordeonElements = [...accordeonElements].filter(item => item !== e.target.parentNode);
-        console.log(otherAccordeonElements);
-
-        otherAccordeonElements.forEach(item => {
-          if (item.classList.contains('active')) {
-            item.classList.remove('active');
-            item.childNodes[3].style.display = 'none';
-          } else {
-            return;
-          }
-        });
-      }
+  // функция переключения элемента
+  const toggleElement = (element, elementContent)  => {
+    element.classList.toggle('active'); // включаем стили активного элемента
+    if (element.classList.contains('active')) {
+      elementContent.style.display = 'block'; // показываем контент
+    } else {
+      elementContent.style.display = 'none'; // скрываем контент
     }
+  };
+
+  // функция скрытия других элементов при клике на выбранный
+  const hideElements = element => {
+    // массив элементов, кроме элемента, кликнутого пользователем
+    const notClickedElements = [...accordeonElements].filter(item => item !== element);
+    // скрываем элементы
+    notClickedElements.forEach(item => {
+      if (item.classList.contains('active')) {
+        item.classList.remove('active');
+        item.childNodes[3].style.display = 'none';
+      }
+    });
+  };
+
+  accordeonElements.forEach(element => {
+    const elementContent = element.childNodes[3];
+
+    element.addEventListener('click', e => {
+      if (e.target.closest('.accordeon .element')) {
+        toggleElement(element, elementContent);
+
+        if (element.classList.contains('active')) {
+          hideElements(element);
+        }
+      }
+    });
   });
 };
 
