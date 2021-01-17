@@ -31,6 +31,17 @@ eval("\nmodule.exports = function () {\n\treturn /[\\u001b\\u009b][[()#;?]*(?:[0
 
 /***/ }),
 
+/***/ "./src/components/accordeon.js":
+/*!*************************************!*\
+  !*** ./src/components/accordeon.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\nfunction _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }\n\nfunction _nonIterableSpread() { throw new TypeError(\"Invalid attempt to spread non-iterable instance.\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.\"); }\n\nfunction _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === \"string\") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === \"Object\" && o.constructor) n = o.constructor.name; if (n === \"Map\" || n === \"Set\") return Array.from(o); if (n === \"Arguments\" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }\n\nfunction _iterableToArray(iter) { if (typeof Symbol !== \"undefined\" && Symbol.iterator in Object(iter)) return Array.from(iter); }\n\nfunction _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }\n\nfunction _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }\n\nvar accordeon = function accordeon() {\n  var accordeonContainer = document.querySelector('.accordeon');\n  console.log(accordeonContainer);\n  var accordeonElements = document.querySelectorAll('.accordeon .element');\n  console.log(accordeonElements);\n  var elementTitles = document.querySelectorAll('.accordeon .title');\n  console.log(elementTitles);\n  var elementContents = document.querySelectorAll('.accordeon .element-content');\n  console.log(elementContents);\n  accordeonContainer.addEventListener('click', function (e) {\n    if (e.target.closest('.accordeon .element')) {\n      console.log('Clicked!');\n      e.target.parentNode.classList.toggle('active');\n      e.target.parentNode.childNodes[3].style.display = 'block';\n\n      if (e.target.parentNode.classList.contains('active')) {\n        console.log('Active!');\n\n        var otherAccordeonElements = _toConsumableArray(accordeonElements).filter(function (item) {\n          return item !== e.target.parentNode;\n        });\n\n        console.log(otherAccordeonElements);\n        otherAccordeonElements.forEach(function (item) {\n          if (item.classList.contains('active')) {\n            item.classList.remove('active');\n            item.childNodes[3].style.display = 'none';\n          } else {\n            return;\n          }\n        });\n      }\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (accordeon);\n\n//# sourceURL=webpack://electrician-landing-project/./src/components/accordeon.js?");
+
+/***/ }),
+
 /***/ "./src/components/modalWindow.js":
 /*!***************************************!*\
   !*** ./src/components/modalWindow.js ***!
@@ -82,7 +93,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_modalWindow__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/modalWindow */ \"./src/components/modalWindow.js\");\n/* harmony import */ var _components_scroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/scroll */ \"./src/components/scroll.js\");\n/* harmony import */ var _components_sendForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/sendForm */ \"./src/components/sendForm.js\");\n/* harmony import */ var _components_slider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/slider */ \"./src/components/slider.js\");\n\n\n\n // Модальное окно\n\n(0,_components_modalWindow__WEBPACK_IMPORTED_MODULE_0__.default)(); // Скролл от якорных ссылок до соответстбущих блоков\n\n(0,_components_scroll__WEBPACK_IMPORTED_MODULE_1__.default)(); // Отправка данных на сервер\n\n(0,_components_sendForm__WEBPACK_IMPORTED_MODULE_2__.default)('form-callback');\n(0,_components_sendForm__WEBPACK_IMPORTED_MODULE_2__.default)('form-feedback');\n(0,_components_sendForm__WEBPACK_IMPORTED_MODULE_2__.default)('form-application'); // Слайдер\n\n(0,_components_slider__WEBPACK_IMPORTED_MODULE_3__.default)();\n\n//# sourceURL=webpack://electrician-landing-project/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_modalWindow__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/modalWindow */ \"./src/components/modalWindow.js\");\n/* harmony import */ var _components_scroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/scroll */ \"./src/components/scroll.js\");\n/* harmony import */ var _components_sendForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/sendForm */ \"./src/components/sendForm.js\");\n/* harmony import */ var _components_slider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/slider */ \"./src/components/slider.js\");\n/* harmony import */ var _components_accordeon__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/accordeon */ \"./src/components/accordeon.js\");\n\n\n\n\n // Модальное окно\n\n(0,_components_modalWindow__WEBPACK_IMPORTED_MODULE_0__.default)(); // Плавный скролл\n\n(0,_components_scroll__WEBPACK_IMPORTED_MODULE_1__.default)(); // Отправка данных формы на сервер\n\n(0,_components_sendForm__WEBPACK_IMPORTED_MODULE_2__.default)('form-callback');\n(0,_components_sendForm__WEBPACK_IMPORTED_MODULE_2__.default)('form-feedback');\n(0,_components_sendForm__WEBPACK_IMPORTED_MODULE_2__.default)('form-application'); // Слайдер\n\n(0,_components_slider__WEBPACK_IMPORTED_MODULE_3__.default)(); // Аккордеон\n\n(0,_components_accordeon__WEBPACK_IMPORTED_MODULE_4__.default)();\n\n//# sourceURL=webpack://electrician-landing-project/./src/index.js?");
 
 /***/ }),
 
@@ -477,7 +488,7 @@ eval("var map = {\n\t\"./log\": \"./node_modules/webpack/hot/log.js\"\n};\n\n\nf
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => "290d42cbea22f0656cde"
+/******/ 		__webpack_require__.h = () => "cc730ca239d3c09ca9c0"
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

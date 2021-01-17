@@ -2,17 +2,21 @@ import modalWindow from './components/modalWindow';
 import scroll from './components/scroll';
 import sendForm from './components/sendForm';
 import slider from './components/slider';
+import accordeon from './components/accordeon';
 
 // Модальное окно
 modalWindow();
 
-// Скролл от якорных ссылок до соответстбущих блоков
+// Плавный скролл
 scroll();
 
-// Отправка данных на сервер
+// Отправка данных формы на сервер
 sendForm('form-callback');
 sendForm('form-feedback');
 sendForm('form-application');
 
 // Слайдер
 slider();
+
+// Аккордеон
+accordeon();
