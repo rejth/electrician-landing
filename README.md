@@ -1,5 +1,4 @@
 # electrician-landing
 
-**Дипломный проект курса по JavaScript от Glo Academy.**    
-**Практика JavaScript.**  
-https://ilyakirsanov.ru/electrician-service
+**Разработка интерактивных компонентов на JavaScript по готовой верстке..**    
+https://rejth.github.io/electrician-landing/
